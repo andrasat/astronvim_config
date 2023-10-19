@@ -81,5 +81,12 @@ return {
     --     ["~/%.config/foo/.*"] = "fooscript",
     --   },
     -- }
+    vim.g.python3_host_prog  = '/home/linuxbrew/.linuxbrew/bin/python3.11'
+
+    -- Ocaml Merlin
+    vim.cmd [[
+      let g:opamshare = substitute(system('opam var share'),'\n$','','''')
+      execute "set rtp+=" . g:opamshare . "/merlin/vim"
+    ]]
   end,
 }
